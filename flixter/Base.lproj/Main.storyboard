@@ -33,27 +33,38 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="338"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-Fh-mF2">
-                                                    <rect key="frame" x="6" y="11" width="185" height="288"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-Fh-mF2">
+                                                    <rect key="frame" x="8" y="8" width="185" height="288"/>
                                                     <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="288" id="3Qd-68-nJc"/>
+                                                        <constraint firstAttribute="width" constant="185" id="xmQ-EB-4BR"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Lost City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAg-8o-FPW">
-                                                    <rect key="frame" x="199" y="20" width="195" height="41"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Lost City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAg-8o-FPW">
+                                                    <rect key="frame" x="199" y="8" width="107" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4d-ve-36O">
-                                                    <rect key="frame" x="199" y="69" width="195" height="230"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4d-ve-36O">
+                                                    <rect key="frame" x="199" y="36.5" width="207" height="243.5"/>
                                                     <string key="text">A reclusive romance novelist was sure nothing could be worse than getting stuck on a book tour with her cover model until a kidnapping attempt sweeps them both into a cutthroat jungle adventure, proving life can be so much stranger, and more romantic, than any of her paperback fictions.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fSI-Fh-mF2" firstAttribute="leading" secondItem="gHr-4r-sCN" secondAttribute="leading" constant="8" id="Jv9-5c-C70"/>
+                                                <constraint firstAttribute="trailing" secondItem="g4d-ve-36O" secondAttribute="trailing" constant="8" id="Kdr-uS-nX1"/>
+                                                <constraint firstItem="g4d-ve-36O" firstAttribute="top" secondItem="iAg-8o-FPW" secondAttribute="bottom" constant="8" symbolic="YES" id="fAY-4P-fKQ"/>
+                                                <constraint firstItem="iAg-8o-FPW" firstAttribute="leading" secondItem="fSI-Fh-mF2" secondAttribute="trailing" constant="6" id="qyO-GO-bDU"/>
+                                                <constraint firstItem="g4d-ve-36O" firstAttribute="leading" secondItem="iAg-8o-FPW" secondAttribute="leading" id="uGm-Yy-I1m"/>
+                                                <constraint firstItem="fSI-Fh-mF2" firstAttribute="top" secondItem="gHr-4r-sCN" secondAttribute="top" constant="8" id="wCt-Mu-SJN"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="g4d-ve-36O" secondAttribute="bottom" constant="15" id="zJo-6m-kHz"/>
+                                                <constraint firstItem="iAg-8o-FPW" firstAttribute="top" secondItem="fSI-Fh-mF2" secondAttribute="top" id="zam-Wc-mnW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="posterImage" destination="fSI-Fh-mF2" id="j5y-af-gSe"/>
@@ -121,19 +132,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="anT-6a-jQT">
-                                <rect key="frame" x="0.0" y="44" width="255" height="379"/>
+                                <rect key="frame" x="0.0" y="88" width="255" height="379"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Lost City" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGt-7C-vjh">
-                                <rect key="frame" x="20" y="431" width="354" height="54"/>
+                                <rect key="frame" x="20" y="484" width="354" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dY-QH-HZq">
-                                <rect key="frame" x="20" y="493" width="354" height="163"/>
+                                <rect key="frame" x="20" y="546" width="354" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">A reclusive romance novelist was sure nothing could be worse than getting stuck on a book tour with her cover model until a kidnapping attempt sweeps them both into a cutthroat jungle adventure, proving life can be so much stranger, and more romantic, than any of her paperback fictions.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
