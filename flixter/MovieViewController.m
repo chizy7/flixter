@@ -85,6 +85,7 @@
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    cell.posterImage.image = nil;
     [cell.posterImage setImageWithURL:posterURL];
     
     
