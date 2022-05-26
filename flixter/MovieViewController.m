@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *movieArray;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSArray *filteredData;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 @end
@@ -27,6 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    [self.activityIndicator startAnimating];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -40,7 +43,14 @@
 }
 
 - (void) fetchMovies{
-    //self.filteredData = self.movieArray;
+    self.filteredData = self.movieArray;
+    
+    UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies" message:@"The internet connection appears to be offline." preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *tryAgainAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self fetchMovies];
+        }];
+    
+    [networkAlert addAction:tryAgainAction];
     
 
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=bac6c1730fe2aa06affb9b3aead2320f"];
@@ -49,6 +59,11 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
                NSLog(@"%@", [error localizedDescription]);
+               
+               //Alert UI
+               [self presentViewController:networkAlert animated:YES completion:^{
+                   // optional code for what happens after the alert controller has finished presenting
+               }];
            }
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -68,6 +83,8 @@
                // TODO: Reload your table view data
            }
         [self.refreshControl endRefreshing];
+        
+        [self.activityIndicator stopAnimating];
        }];
     [task resume];
 }
