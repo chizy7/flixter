@@ -8,12 +8,15 @@
 #import "MovieViewController.h"
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movieArray;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) NSArray *filteredData;
 
 
 @end
@@ -29,6 +32,11 @@
     self.tableView.delegate = self;
     
     [self fetchMovies];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+   // [self.tableView addSubview:self.refreshControl];
 }
 
 - (void) fetchMovies{
@@ -48,6 +56,7 @@
                NSLog(@"%@", dataDictionary); // remove after | for logging
 
                self.movieArray =dataDictionary[@"results"];
+               self.filteredData = dataDictionary[@"results"];
                for (NSDictionary *movie in self.movieArray){
                    NSLog(@"%@", movie[@"title"]);
                    
@@ -55,10 +64,10 @@
                
                }
                // TODO: Get the array of movies
-               //self.movieArray = dataDictionary[@"results"];
                // TODO: Store the movies in a property to use elsewhere
                // TODO: Reload your table view data
            }
+        [self.refreshControl endRefreshing];
        }];
     [task resume];
 }
@@ -92,15 +101,20 @@
     return cell;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
+    UITableViewCell *cell = sender;
+    NSIndexPath *myIndexPath = [self.tableView indexPathForCell:cell];
     // Pass the selected object to the new view controller.
+    NSDictionary *dataToPass = self.filteredData[myIndexPath.row];
+    DetailsViewController *detailVC = [segue destinationViewController];
+    detailVC.detailDict = dataToPass;
 }
-*/
+
 
 //- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 //    <#code#>
