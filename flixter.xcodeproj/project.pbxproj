@@ -18,6 +18,7 @@
 		CF40E04B283F28B900489201 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF40E04A283F28B900489201 /* MovieCell.m */; };
 		CF40E04E283FAAF200489201 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF40E04D283FAAF200489201 /* DetailsViewController.m */; };
 		CF40E0512840121900489201 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF40E0502840121900489201 /* GridViewController.m */; };
+		CFC2452128455AFB00283FE2 /* MovieGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC2452028455AFB00283FE2 /* MovieGridCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		CF40E04D283FAAF200489201 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		CF40E04F2840121900489201 /* GridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
 		CF40E0502840121900489201 /* GridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
+		CFC2451F28455AFB00283FE2 /* MovieGridCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieGridCell.h; sourceTree = "<group>"; };
+		CFC2452028455AFB00283FE2 /* MovieGridCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieGridCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				CF40E04D283FAAF200489201 /* DetailsViewController.m */,
 				CF40E04F2840121900489201 /* GridViewController.h */,
 				CF40E0502840121900489201 /* GridViewController.m */,
+				CFC2451F28455AFB00283FE2 /* MovieGridCell.h */,
+				CFC2452028455AFB00283FE2 /* MovieGridCell.m */,
 			);
 			path = flixter;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC2452128455AFB00283FE2 /* MovieGridCell.m in Sources */,
 				CF40E048283F1D3800489201 /* MovieViewController.m in Sources */,
 				CF40E04B283F28B900489201 /* MovieCell.m in Sources */,
 				CF0F4CB3282E235E0073B872 /* AppDelegate.m in Sources */,
