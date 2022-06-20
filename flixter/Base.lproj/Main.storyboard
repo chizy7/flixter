@@ -160,7 +160,7 @@
                     <navigationItem key="navigationItem" id="5nm-nY-gNI"/>
                     <connections>
                         <outlet property="collectionFlowLayout" destination="yg2-Ks-fTf" id="iGP-eQ-1j6"/>
-                        <outlet property="movieCollectionView" destination="ZVB-GM-JNg" id="Lyd-Ki-OGX"/>
+                        <outlet property="collectionView" destination="ZVB-GM-JNg" id="wuX-cF-wJv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="poO-eM-WzW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
